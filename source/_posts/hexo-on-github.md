@@ -48,10 +48,10 @@ tags:
     ![](https://i.imgur.com/J1RVFK1.png)
 
 5.  `cd BLOG_HEXO_DEMO`, `ls`
-    ![](https://i.imgur.com/6yEpq5l.png)
-		進到剛剛創建的資料夾來看看。
-		如果有仔細研究 `4.` 的執行結果的話。
-		可以發現 hexo 預設使用的是 yarn，並且已經先執行了 `yarn` 來裝好所有 dependency 了。
+  ![](https://i.imgur.com/6yEpq5l.png)
+	進到剛剛創建的資料夾來看看。
+	如果有仔細研究 `4.` 的執行結果的話。
+	可以發現 hexo 預設使用的是 yarn，並且已經先執行了 `yarn` 來裝好所有 dependency 了。
 
 # 開啟 hexo-server
 1.  `yarn add hexo-server@0.3.2`
@@ -64,10 +64,10 @@ tags:
 	 ![](https://i.imgur.com/MbCLgDS.png)
 
 3.  `yarn run dev`
-    ![](https://i.imgur.com/tXrCVR5.png)
-    執行後可以開啟 hexo-server，url 為 `https://localhost:4000`。
-		打開瀏覽器就可看到預覽內容。
-		![](https://i.imgur.com/oWtKLoP.jpg)
+  ![](https://i.imgur.com/tXrCVR5.png)
+  執行後可以開啟 hexo-server，url 為 `https://localhost:4000`。
+	打開瀏覽器就可看到預覽內容。
+	![](https://i.imgur.com/oWtKLoP.jpg)
 
 # deploy 到 GitHub
 [參考文件](https://hexo.io/docs/deployment.html)
@@ -75,7 +75,7 @@ tags:
 1.  修改 `BLOG_HEXO_DEMO` 底下的 `_config.yml`
     ![](https://i.imgur.com/xafr7DV.png)
 	找到 `deploy:` 這段，將他改成
-    ```
+    ```yml
     deploy:
       type: git
       repo: https://github.com/hexo-demo/hexo-demo.github.io

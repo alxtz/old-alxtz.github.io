@@ -15,13 +15,13 @@ tags:
 這邊將會使用由我自己 fork 的版本 [hexo-theme-apollo-pug](https://github.com/alxtz/hexo-theme-apollo-pug)
 
 1.  進到你之前創的 hexo 資料夾，執行
-    `yarn add hexo-renderer-pug hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive`
-		![](https://i.imgur.com/U3zCNGw.png)
+  `yarn add hexo-renderer-pug hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive`
+	![](https://i.imgur.com/U3zCNGw.png)
 
 2.  `git clone https://github.com/alxtz/hexo-theme-apollo-pug themes/apollo`
-    ![](https://i.imgur.com/5Lgnmph.png)
-		在 hexo 裡，新增的 theme 都是以資料夾的形式存在，並放在 `theme/` 這個資料夾內
-		![](https://i.imgur.com/9523XzG.png)
+  ![](https://i.imgur.com/5Lgnmph.png)
+	在 hexo 裡，新增的 theme 都是以資料夾的形式存在，並放在 `theme/` 這個資料夾內
+	![](https://i.imgur.com/9523XzG.png)
 
 
 3.  回到 `_config.yml`，找到將 theme 改成 `apollo` 即可
@@ -73,7 +73,7 @@ tags:
     不過在使用前，得先去讓給予 Gitalk 權限，讓他可以在我們的 repo 上開 issue。
     ```html
     <script type="text/javascript">
-    var gitalk = new Gitalk({
+      var gitalk = new Gitalk({
         clientID: '',
         clientSecret: '',
         id: window.location.pathname,
@@ -81,8 +81,8 @@ tags:
         owner: '',
         admin: '',
         distractionFreeMode: false
-    })
-    gitalk.render('gitalk-container')
+      })
+      gitalk.render('gitalk-container')
     </script>
     ```
 3.  點開 https://github.com/settings/applications/new
@@ -93,7 +93,7 @@ tags:
     ![](https://i.imgur.com/3EJku9Q.png)
 
 4.  改動剛剛介紹的 `comment.pug`，內容改為
-    ```pug
+    ```javascript
     #gitalk-container
 
     script.
