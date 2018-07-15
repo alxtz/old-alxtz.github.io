@@ -10,6 +10,9 @@ block description
 meta(name="viewport", content="width=device-width, initial-scale=1")
 link(rel="icon", href=url_for(theme.favicon))
 link(rel="stylesheet", href=url_for("css/apollo.css"))
+  
+link(rel="stylesheet",href="https://unpkg.com/gitalk/dist/gitalk.css")
+script(src="https://unpkg.com/gitalk/dist/gitalk.min.js")
 
 - var xml = config.url + '/atom.xml'
     link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
