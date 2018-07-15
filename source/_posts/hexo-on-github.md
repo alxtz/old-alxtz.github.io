@@ -3,9 +3,6 @@ title: 如何在 GitHub 上架一個 Hexo 部落格
 date: 2018-07-15 19:51:33
 tags:
 ---
-
-# 如何在 GitHub 上架一個 Hexo 部落格
-
 #### 大綱
 - 建一個新 repo
 - 建立 hexo 環境
