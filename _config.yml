@@ -79,5 +79,5 @@ theme: apollo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:yt8yt/yt8yt.github.io.git
+  repo: git@github.com:alxtz/alxtz.github.io.git
   branch: gh-pages
