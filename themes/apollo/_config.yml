@@ -1,9 +1,9 @@
 menu:
     Blog: /
-    Archive: /archives/
+    # Archive: /archives/
     GitHub: https://github.com/alxtz
     Twitter: http://weibo.com/sunchongsheng
-    Rss: /atom.xml
+    FAQ: /atom.xml
 
 favicon: /favicon.png
 logo: /favicon.png
