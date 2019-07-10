@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2019/07/16/faq/</loc>
+    
+    <lastmod>2019-07-10T15:49:40.609Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/07/18/disable-autocorrect/</loc>
+    
+    <lastmod>2019-07-10T15:43:34.133Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/07/15/hexo-on-github/</loc>
+    
+    <lastmod>2019-07-10T15:43:34.133Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/07/16/hexo-theme-gitalk/</loc>
+    
+    <lastmod>2019-07-10T15:43:34.133Z</lastmod>
+    
+  </url>
+  
+</urlset>

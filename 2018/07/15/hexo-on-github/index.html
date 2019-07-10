@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="zh-tw"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 如何在 GitHub 上架一個 Hexo 部落格 · Hexo</title><meta name="description" content="如何在 GitHub 上架一個 Hexo 部落格 - Alex Tzeng"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Hexo"></head><body><div class="wrap"><header><a class="logo-link" href="/"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">BLOG</a></li><li class="nav-list-item"><a class="nav-list-link" href="https://github.com/alxtz" target="_blank">GITHUB</a></li><li class="nav-list-item"><a class="nav-list-link" href="http://weibo.com/sunchongsheng" target="_blank">TWITTER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">FAQ</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">如何在 GitHub 上架一個 Hexo 部落格</h1><div class="post-info">2018年7月15日</div><div class="post-content"><h4 id="大綱"><a href="#大綱" class="headerlink" title="大綱"></a>大綱</h4><ul>
+<li>建一個新 repo</li>
+<li>建立 hexo 環境</li>
+<li>開啟 hexo-server</li>
+<li>deploy 到 GitHub</li>
+</ul>
+<h1 id="創建新的-GitHub-repo"><a href="#創建新的-GitHub-repo" class="headerlink" title="創建新的 GitHub repo"></a>創建新的 GitHub repo</h1><p>首先，點進 <a href="https://github.com/new" target="_blank" rel="noopener">https://github.com/new</a> 來創建一個新的 repo</p>
+<p><img src="https://i.imgur.com/ciOa1ze.png" alt></p>
+<p>這邊要注意，repo name 一定得是 <code>${username}.github.io</code></p>
+<p>像是我剛創的使用者帳號為 <code>hexo-demo</code>，這個 repo 一定得叫 <code>hexo-demo.github.io</code></p>
+<p><img src="https://i.imgur.com/2mEKjYG.png" alt></p>
+<p>按下 create 後，這個 repo 就先放著，後來會用到</p>
+<p><img src="https://i.imgur.com/J4F9MZ4.png" alt></p>
+<h1 id="建立-hexo-環境"><a href="#建立-hexo-環境" class="headerlink" title="建立 hexo 環境"></a>建立 hexo 環境</h1><p>網路上其實已經有不少 <a href="https://gist.github.com/btfak/18938572f5df000ebe06fbd1872e4e39" target="_blank" rel="noopener">gist</a> 介紹要用哪些 command 來安裝 hexo 了</p>
+<blockquote>
+<p>[環境]<br><code>nodejs=9.9.0</code><br><code>npm=5.6.0</code><br><code>yarn=1.6.0</code></p>
+</blockquote>
+<ol>
+<li><p><code>npm install -g hexo-cli@1.1.0</code></p>
+<p><img src="https://i.imgur.com/Ld5AuIR.png" alt></p>
+</li>
+<li><p>安裝完後，可以使用 <code>hexo -v</code> 來試試看是否有裝到正確的版本<br>  <img src="https://i.imgur.com/wZznxtf.png" alt></p>
+</li>
+<li><p><code>hexo init &lt;資料夾名稱&gt;</code><br><img src="https://i.imgur.com/8ePCyYS.png" alt></p>
+</li>
+<li><p>執行成功的結果<br><img src="https://i.imgur.com/J1RVFK1.png" alt></p>
+</li>
+<li><p><code>cd BLOG_HEXO_DEMO</code>, <code>ls</code><br><img src="https://i.imgur.com/6yEpq5l.png" alt><br>進到剛剛創建的資料夾來看看。<br>如果有仔細研究 <code>4.</code> 的執行結果的話。<br>可以發現 hexo 預設使用的是 yarn，並且已經先執行了 <code>yarn</code> 來裝好所有 dependency 了。</p>
+</li>
+</ol>
+<h1 id="開啟-hexo-server"><a href="#開啟-hexo-server" class="headerlink" title="開啟 hexo-server"></a>開啟 hexo-server</h1><ol>
+<li><p><code>yarn add hexo-server@0.3.2</code><br><img src="https://i.imgur.com/Hwrakia.png" alt><br>hexo 本身的 hexo-server 和 hexo-cli 是分開的，所以要額外裝 (<a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">doc</a>)</p>
+</li>
+<li><p>將 hexo server 寫成一個 npm script</p>
+<p> 打開 <code>BLOG_HEXO_DEMO</code> 底下的 package.json，新增一段 npm script<br> <img src="https://i.imgur.com/MbCLgDS.png" alt></p>
+</li>
+<li><p><code>yarn run dev</code><br><img src="https://i.imgur.com/tXrCVR5.png" alt><br>執行後可以開啟 hexo-server，url 為 <code>https://localhost:4000</code>。<br>打開瀏覽器就可看到預覽內容。<br><img src="https://i.imgur.com/oWtKLoP.jpg" alt></p>
+</li>
+</ol>
+<h1 id="deploy-到-GitHub"><a href="#deploy-到-GitHub" class="headerlink" title="deploy 到 GitHub"></a>deploy 到 GitHub</h1><p><a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">參考文件</a></p>
+<ol>
+<li><p>修改 <code>BLOG_HEXO_DEMO</code> 底下的 <code>_config.yml</code><br><img src="https://i.imgur.com/xafr7DV.png" alt><br>找到 <code>deploy:</code> 這段，將他改成</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/hexo-demo/hexo-demo.github.io</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>url 請使用先前創建的 repo url<br><img src="https://i.imgur.com/2ejvRof.png" alt></p>
+</li>
+<li><p>init repo<br><code>git init</code><br><img src="https://i.imgur.com/lCnZSEb.png" alt><br>用 quick &amp; dirty 的方式將所有檔案加進 commit 裡<br><img src="https://i.imgur.com/HnbFhoH.png" alt></p>
+</li>
+<li><p>推上 dev<br>為了後續好管理，我決定使用 dev 來當作放 blog source code 的 branch。<br>而 master 已經在先前設置過，將會當作顯示 hexo 網頁用的 branch。<br><img src="https://i.imgur.com/8etnI7X.png" alt><br>用 <code>git remote add GitHub https://github.com/hexo-demo/hexo-demo.github.io</code><br>和 <code>git push GitHub dev</code> 推上去即可<br><img src="https://i.imgur.com/JDvWqc1.png" alt><br>可以看到我們 blog 的 source code 已經推上 GitHub 的 dev<br><img src="https://i.imgur.com/fMiv9SR.png" alt></p>
+</li>
+<li><p>在 <code>package.json</code> 裡新增另一段 script<br><code>&quot;deploy&quot;: &quot;hexo clean &amp;&amp; hexo deploy&quot;</code><br><img src="https://i.imgur.com/4OlaqKE.png" alt></p>
+<p>接著 <code>yarn add hexo-deployer-git</code><br>有了 <code>hexo-deployer-git</code>，<code>hexo deploy</code> 才能使用 git 自動 push 上 master</p>
+<p><img src="https://i.imgur.com/jWzv8jf.png" alt></p>
+</li>
+<li><p><code>yarn run deploy</code><br><img src="https://i.imgur.com/yFXnttk.png" alt><br>接著上剛剛 repo 的 <code>master</code> 看，會發現 hexo 生成的 html, css 都已經被自動推上去了。<br><img src="https://i.imgur.com/yYMxuHQ.png" alt><br>打開 <code>https://hexo-demo.github.io/</code><br>就可以看到我們剛生成的部落格。<br><img src="https://i.imgur.com/eLyWjte.jpg" alt></p>
+</li>
+</ol>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p>hexo 有非常不錯的<a href="https://hexo.io/docs/setup.html" target="_blank" rel="noopener">官方文件</a><br>這篇文章 demo 使用的 <a href="https://github.com/hexo-demo/hexo-demo.github.io" target="_blank" rel="noopener">repo</a><br>demo 結果 <a href="https://hexo-demo.github.io/" target="_blank" rel="noopener">https://hexo-demo.github.io/</a></p>
+</div></article></div></main><footer><div class="paginator"><a class="prev" href="/2018/07/16/hexo-theme-gitalk/">上一篇</a></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'd4b8183708650c07a010',
+  clientSecret: 'db75179d30088e1d59b9f663fa004e1bc1f5890a',
+  id: window.location.pathname,
+  repo: 'alxtz.github.io',
+  owner: 'alxtz',
+  admin: ['alxtz'],
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')</script><div class="copyright"><p>© 2018 - 2019 <a href="http://yoursite.com">Alex Tzeng</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
